@@ -16,8 +16,8 @@ const App = () => {
       <Toaster />
       <Routes>
         {/* Public Routes */}
-        <Route path='/login' element={<Login mode="login" />} />
-        <Route path='/register' element={<Login mode="register" />} />
+        <Route path='/login/*' element={<Login mode="login" />} />
+        <Route path='/register/*' element={<Login mode="register" />} />
 
         {/* Private Routes */}
         <Route element={<ProtectedRoute />}>
