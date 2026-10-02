@@ -24,7 +24,7 @@ export const handleClerkWebhook = async (req, res) => {
         ON CONFLICT (id) DO UPDATE SET
         id = EXCLUDED.id,
         name = EXCLUDED.name,
-        email = EXCLUDED.email,
+        email = COALESCE(NULLIF(EXCLUDED.email, ""), users.email),
         image = EXCLUDED.image,
         plan = EXCLUDED.plan,
         updated_at = NOW()`;
